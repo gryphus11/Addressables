@@ -83,6 +83,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - FX
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1ed53b1d286e8543a0c9d5d5ff9e33d
+    m_Address: Assets/Prefabs/FX_Prefabs/Butterlies_Particle_01_MultiColour.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - FX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1ad299a5a244c843b029bdd02df7867
+    m_Address: Assets/Prefabs/FX_Prefabs/Leaves_Solo_Pink_01.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - FX
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c1ada94c6f749c64a81a8a108099766f, type: 2}
   m_SchemaSet:

@@ -72,6 +72,7 @@ public static class AddressableUtility
             var instance = await InstantiateAsync(location);
             if (instance != null)
             {
+                Debug.Log($"#### Instantiated : {location.PrimaryKey} ");
                 instances.Add(instance);
             }
             else
