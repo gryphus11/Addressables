@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 7a6e613d2ea6cca4297a2f01b5479e8d
+  m_SerializeEntries:
+  - m_GUID: b4390ca531d84d646b4bad8e0064875a
+    m_Address: Assets/Prefabs/Environments/Clouds.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Environments
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c38f3bf04d1e20940bc561b55675652e
+    m_Address: Assets/Prefabs/Environments/ForestMap.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Environments
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 143049b01c2dd0f468d570ddc8cb753d
+    m_Address: Assets/Sounds/8BIT
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - 8BitClips
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67f504c1ad2f1411884198a096f0ed72
+    m_Address: Assets/Layer Lab/GUI Pro-CasualGame/ResourcesData/Sprite/Components/Button
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ButtonIcons
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 14f4f60387c6fb64f954511f05df977f
+    m_Address: Assets/Prefabs/Skybox/MountainSkybox.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Skybox
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fcc79528b91ecc7498b53665702247aa
+    m_Address: Assets/Prefabs/FX_Prefabs/SM_Generic_SkyDome.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - FX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9310938a479868440ae3a4aa5673bf93
+    m_Address: Assets/Prefabs/FX_Prefabs/Butterlies_Particle_01_Blue.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - FX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ceedf1041ce9612478ee18ceed55de99
+    m_Address: Assets/Prefabs/FX_Prefabs/Fire_FX.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - FX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dfc5e1934d5042b45a164184b3493eef
+    m_Address: Assets/Prefabs/FX_Prefabs/FX_Snow.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - FX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 866d681b98689cc42b394221c21b846e
+    m_Address: Assets/Prefabs/FX_Prefabs/Rain_Particle_Floor_FX.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - FX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20cdadc4621ae0d4686e46083a1947fe
+    m_Address: Assets/Prefabs/FX_Prefabs/Smoke_FX.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - FX
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: c1ada94c6f749c64a81a8a108099766f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7eb6ad543a7e1b9408b7f838f4a0e95d, type: 2}
+    - {fileID: 11400000, guid: 9fed0f4e5b3b6274f9182ee219437267, type: 2}
