@@ -37,21 +37,6 @@ public static class AddressableUtility
         return await InternalLoadAssetAsync(key.Asset.name, () => key.LoadAssetAsync<T>(), null);
     }
 
-    public static void Instantiate(string key, Transform parent = null, Action<GameObject> callback = null)
-    {
-        LoadAsync<GameObject>(key, (prefab) => 
-        {
-            GameObject instance = GameObject.Instantiate(prefab, parent);
-            instance.AddComponent<SelfReleaseInstance>();
-            instance.name = prefab.name;
-            
-            if(parent != null)
-                instance.transform.localPosition = parent.transform.position;
-
-            callback?.Invoke(instance);
-        });
-    }
-
     public static void LoadAllAsync<T>(string key, System.Action<List<T>> callback = null) where T : Object
     {
         LoadAssetsAsync(key, callback).Forget();
@@ -68,6 +53,7 @@ public static class AddressableUtility
 
         await LoadAndUpdateCollection(locations, results);
 
+        callback?.Invoke(results);
         return results;
     }
 
@@ -77,13 +63,13 @@ public static class AddressableUtility
         foreach (var location in locations)
         {
             string key = location.PrimaryKey;
-            var asset = await InternalLoadAssetAsync<T>(key, () => Addressables.LoadAssetAsync<T>(key));
-            
+            var asset = await LoadAssetAsync<T>(key);
+
             if (asset != null && !loadedAssetList.Contains(asset))
                 loadedAssetList.Add(asset);
         }
     }
-    
+
     private static async UniTask<T> InternalLoadAssetAsync<T>(string key, System.Func<AsyncOperationHandle<T>> getHandle, System.Action<T> callback = null) where T : Object
     {
         Debug.Log($"Load Async Asset : {key}");
@@ -127,6 +113,34 @@ public static class AddressableUtility
         }
     }
 
+    public static void Instantiate(string key, Transform parent = null, Action<GameObject> callback = null)
+    {
+        InstantiateAsync(key, parent, callback).Forget();
+    }
+
+    public static async UniTask<GameObject> InstantiateAsync(string key, Transform parent = null, Action<GameObject> callback = null)
+    {
+        var prefab = await LoadAssetAsync<GameObject>(key);
+
+        if (prefab == null)
+        {
+            Debug.Log($"{key} is Null");
+            return null;
+        }
+
+        GameObject instance = GameObject.Instantiate(prefab, parent);
+        instance.name = prefab.name;
+
+        if (parent != null)
+            instance.transform.localPosition = parent.transform.position;
+
+        callback?.Invoke(instance);
+
+        return instance;
+    }
+
+
+
     public static void Release(string key)
     {
         if (resources.TryGetValue(key, out Object resource) == false)
@@ -156,7 +170,7 @@ public static class AddressableUtility
     }
 
     // 라벨에 해당하는 모든 게임 오브젝트를 인스턴스화하는 함수
-    public static async UniTask<List<GameObject>> InstantiateAllWithLabelAsync(string label)
+    public static async UniTask<List<GameObject>> InstantiateAllWithLabelAsync(string label, Transform parent = null)
     {
         var locations = await LoadResourceLocationsAsync(label);
 
@@ -170,7 +184,7 @@ public static class AddressableUtility
 
         foreach (var location in locations)
         {
-            var instance = await InstantiateAsync(location);
+            var instance = await InstantiateAsync(location.PrimaryKey, parent, null);
             if (instance != null)
             {
                 Debug.Log($"#### Instantiated : {location.PrimaryKey} ");

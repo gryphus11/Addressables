@@ -75,14 +75,7 @@ public class SpawnObjectAddressable : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.U))
         {
-            AddressableUtility.ReleaseAssets(instantiatedList);
-            instantiatedList.Clear();
-            
-            AddressableUtility.ReleaseAssets(texture2dList);
-            texture2dList.Clear();
-
-            AddressableUtility.ReleaseAssets(clips);
-            clips.Clear();
+            AddressableUtility.Clear();
         }
     }
 
@@ -119,5 +112,10 @@ public class SpawnObjectAddressable : MonoBehaviour
     private async UniTaskVoid LoadAudioClips()
     {
         //await AddressableUtility.LoadAssetsAsync(labelReference, clips);
+    }
+
+    private void OnDestroy()
+    {
+        AddressableUtility.Clear();
     }
 }
