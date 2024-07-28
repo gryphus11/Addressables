@@ -112,11 +112,12 @@ public class SpawnObjectAddressable : MonoBehaviour
 
     private async UniTaskVoid LoadTextures()
     {
-        await AddressableUtility.LoadAssetsAsync("Icon", texture2dList);
+        List<GameObject> aaa = new List<GameObject>();
+        await AddressableUtility.LoadAssetsAsync<GameObject>("FX", (list) => { Debug.Log(list); });
     }
 
     private async UniTaskVoid LoadAudioClips()
     {
-        await AddressableUtility.LoadAssetsAsync(labelReference, clips);
+        //await AddressableUtility.LoadAssetsAsync(labelReference, clips);
     }
 }

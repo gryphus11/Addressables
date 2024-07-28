@@ -78,7 +78,7 @@ MonoBehaviour:
     - FX
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 20cdadc4621ae0d4686e46083a1947fe
-    m_Address: Assets/Prefabs/FX_Prefabs/Smoke_FX.prefab
+    m_Address: Smoke_FX.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - FX
@@ -94,6 +94,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - FX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5243ee84dc8f96549ac0940fd7674daf
+    m_Address: Assets/Sounds/8BIT/Beeps
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - 8BitClips
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: c1ada94c6f749c64a81a8a108099766f, type: 2}
